@@ -1,15 +1,24 @@
-const map = L.map('map').setView([-15.78, -47.93], 4);
+// Cria o mapa e centraliza no Sudeste
+const map = L.map('map').setView([-22.0, -43.0], 6);
+
+// Adiciona o mapa base (OpenStreetMap)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-maxZoom: 19,
-attribution: '&copy; OpenStreetMap contributors'
+  attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
-fetch('dados.json')
-.then(r => r.json())
-.then(pontos => {
-pontos.forEach(p => {
-L.marker([p.lat, p.lng]).addTo(map)
-.bindPopup(`<strong>${p.nome}</strong><br>${p.lat.toFixed(4)}, $
-{p.lng.toFixed(4)}`);
-});
-})
-.catch(err => console.error('Erro ao carregar dados.json', err));
+
+// 🔹 Limitar a área só ao Sudeste
+const sudesteBounds = [
+  [-25.5, -52.0], // canto inferior esquerdo (Paraná/SP)
+  [-17.0, -38.0]  // canto superior direito (Minas/ES)
+];
+
+// Aplica os limites
+map.setMaxBounds(sudesteBounds);
+map.fitBounds(sudesteBounds);
+
+// Agora você pode adicionar marcadores normalmente
+L.marker([-23.55, -46.63]).addTo(map)
+  .bindPopup("São Paulo - exemplo");
+
+L.marker([-22.90, -43.20]).addTo(map)
+  .bindPopup("Rio de Janeiro - exemplo");
