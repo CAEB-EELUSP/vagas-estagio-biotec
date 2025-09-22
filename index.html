@@ -3,32 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mapa Sudeste</title>
+  <title>Estágios em Biotecnologia</title>
 
   <!-- CSS do Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
   <style>
-    /* O mapa precisa de altura definida */
-    #map {
-      height: 100vh;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
     body {
       margin: 0;
+      display: flex;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Barra lateral */
+    #sidebar {
+      width: 250px;
+      background: #0d1330;
+      color: #e9eef7;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Área principal (topbar + mapa) */
+    #main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Barra superior */
+    #topbar {
+      height: 50px;
+      background: #111632;
+      color: #e9eef7;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      font-weight: bold;
+    }
+
+    /* Área do mapa */
+    #map {
+      flex: 1;
+      width: 100%;
+    }
+
+    a {
+      color: #eb6213;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <!-- Aqui o Leaflet vai renderizar -->
-  <div id="map"></div>
+  <!-- Barra lateral -->
+  <div id="sidebar">
+    <h2>Menu</h2>
+    <p><a href="#">Início</a></p>
+    <p><a href="#">Sobre</a></p>
+    <p><a href="#">Contato</a></p>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div id="main">
+    <div id="topbar">Mapa Interativo — Sudeste</div>
+    <div id="map"></div>
+  </div>
 
   <!-- JS do Leaflet -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
 
   <!-- Seu script -->
   <script src="script.js"></script>
 </body>
 </html>
+
