@@ -3,81 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mapa Sudeste</title>
-
-  <!-- CSS do Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
+  <title>Capa — Mapa Sudeste</title>
   <style>
+    :root { --laranja:#eb6213; --texto:#fff; --card:#ffffff; --borda:#f2f2f2; }
+    * { box-sizing: border-box; }
     body {
-      margin: 0;
-      display: flex;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      background: #eb6213; /* fundo laranja */
+      margin: 0; height: 100vh; display: grid; grid-template-columns: 240px 1fr; grid-template-rows: 100vh;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif;
+      background: var(--laranja);
     }
-
-    /* Barra lateral menor */
     #sidebar {
-      width: 150px;
-      background: #eb6213; /* também laranja */
-      color: #fff;         /* texto branco para contraste */
-      padding: 0.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      background: var(--laranja); color: var(--texto); padding: 1rem; display: flex; flex-direction: column; gap: .75rem;
+      border-right: 1px solid rgba(0,0,0,.06);
     }
-
-    /* Área principal (topbar + mapa) */
-    #main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+    #brand { font-weight: 800; letter-spacing: .4px; }
+    .btn {
+      background: rgba(255,255,255,.98); color: #111; border: none; border-radius: 12px;
+      padding: .75rem 1rem; cursor: pointer; font-weight: 700; width: 100%; text-align: left;
+      box-shadow: 0 2px 10px rgba(0,0,0,.12);
     }
-
-    /* Barra superior */
-    #topbar {
-      height: 50px;
-      background: #eb6213; /* também laranja */
-      color: #fff;
-      display: flex;
-      align-items: center;
-      padding: 0 1rem;
-      font-weight: bold;
+    .btn.secondary { background: rgba(255,255,255,.7); }
+    .btn:hover { filter: brightness(0.98); }
+    .muted { color: rgba(255,255,255,.9); font-size: .88rem; }
+    .spacer { flex: 1; }
+    a.clean { color: inherit; text-decoration: none; display: block; }
+    #content {
+      display: grid; place-items: center; padding: 2rem; background: var(--laranja);
     }
-
-    /* Área do mapa */
-    #map {
-      flex: 1;
-      width: 100%;
+    .card {
+      width: min(980px, 92vw); background: var(--card); border: 1px solid var(--borda);
+      border-radius: 18px; padding: clamp(1rem, 2.5vw, 2rem); box-shadow: 0 16px 40px rgba(0,0,0,.16);
     }
-
-    a {
-      color: #fff; /* links em branco para destacar no fundo laranja */
-      text-decoration: none;
+    h1 { margin: 0 0 .25rem; }
+    p.lead { margin: 0 0 1rem; color: #333; }
+    .toolbar { display: flex; gap: .6rem; margin-top: .8rem; }
+    .pill {
+      background: #111; color: #fff; border-radius: 999px; padding: .5rem .9rem; font-size: .9rem; text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+    #sobreWrap { display:none; }
+    #sobre {
+      width: 100%; min-height: 200px; border: 1px solid #e6e6e6; border-radius: 12px; padding: .9rem 1rem;
+      outline: none; background: #fff; color: #222; line-height: 1.55;
+    }
+    #sobre:focus { box-shadow: 0 0 0 3px rgba(235,98,19,.25); }
+    .actions { display:flex; gap:.6rem; margin-top:.6rem; }
+    .btnSmall { background:#111; color:#fff; border:none; border-radius:10px; padding:.5rem .8rem; cursor:pointer; }
+    .note { font-size:.88rem; color:#444; margin-top:.4rem; }
+    @media (max-width: 800px) {
+      body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+      #sidebar { grid-row: 1; grid-column: 1; display:flex; flex-direction: row; gap:.6rem; align-items:center; }
+      #content { grid-row: 2; }
+      .btn { width: auto; }
     }
   </style>
 </head>
 <body>
-  <!-- Barra lateral -->
-  <div id="sidebar">
-    <h3>Menu</h3>
-    <a href="#">Início</a>
-    <a href="#">Sobre</a>
-    <a href="#">Contato</a>
-  </div>
+  <aside id="sidebar">
+    <div id="brand">Mapa Sudeste</div>
+    <button class="btn" id="btnSobre">🧾 Sobre o projeto</button>
+    <a class="clean" href="mapa.html"><button class="btn secondary" id="btnMapa">🗺️ Acesse o mapa</button></a>
+    <div class="spacer"></div>
+    <div class="muted">© 2025</div>
+  </aside>
 
-  <!-- Conteúdo principal -->
-  <div id="main">
-    <div id="topbar">Mapa Interativo — Sudeste</div>
-    <div id="map"></div>
-  </div>
+  <main id="content">
+    <section class="card" id="homeWrap">
+      <h1>Bem-vinda(o)!</h1>
+      <p class="lead">Use o menu ao lado para conhecer o projeto ou acessar o mapa interativo da região Sudeste.</p>
+      <div class="toolbar">
+        <a class="pill" href="#" id="ctaSobre">Ver Sobre</a>
+        <a class="pill" style="background:#eb6213" href="mapa.html">Acessar mapa</a>
+      </div>
+    </section>
 
-  <!-- JS do Leaflet -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="script.js"></script>
+    <section class="card" id="sobreWrap">
+      <h1>Sobre o projeto</h1>
+      <p class="lead">Edite o texto abaixo conforme necessário. O conteúdo é salvo no seu navegador (localStorage).</p>
+      <div id="sobre" contenteditable="true" spellcheck="true">
+        Escreva aqui uma descrição do objetivo do projeto, público-alvo, como contribuir, contato, etc.
+      </div>
+      <div class="actions">
+        <button class="btnSmall" id="btnSalvar">Salvar</button>
+        <button class="btnSmall" id="btnRepor">Repor padrão</button>
+      </div>
+      <div class="note">Dica: o texto fica salvo apenas neste navegador. Para publicar no site, copie o conteúdo e cole no repositório (README ou página dedicada).</div>
+    </section>
+  </main>
+
+  <script>
+    const homeWrap = document.getElementById('homeWrap');
+    const sobreWrap = document.getElementById('sobreWrap');
+    const btnSobre = document.getElementById('btnSobre');
+    const ctaSobre = document.getElementById('ctaSobre');
+    const sobre = document.getElementById('sobre');
+    const btnSalvar = document.getElementById('btnSalvar');
+    const btnRepor = document.getElementById('btnRepor');
+
+    function showSobre(){ homeWrap.style.display = 'none'; sobreWrap.style.display = 'block'; }
+    function showHome(){ sobreWrap.style.display = 'none'; homeWrap.style.display = 'block'; }
+    btnSobre.addEventListener('click', showSobre);
+    ctaSobre.addEventListener('click', (e)=>{ e.preventDefault(); showSobre(); });
+
+    const KEY = 'sobreProjetoTexto_v1';
+    const defaultText = 'Escreva aqui uma descrição do objetivo do projeto, público-alvo, como contribuir, contato, etc.';
+
+    function loadText(){ const saved = localStorage.getItem(KEY); if(saved){ sobre.innerHTML = saved; } }
+    function saveText(){ localStorage.setItem(KEY, sobre.innerHTML); alert('Texto salvo neste navegador.'); }
+    function resetText(){ if(confirm('Repor o texto padrão?')){ sobre.innerHTML = defaultText; localStorage.removeItem(KEY);} }
+    btnSalvar.addEventListener('click', saveText);
+    btnRepor.addEventListener('click', resetText);
+    loadText();
+  </script>
 </body>
 </html>
