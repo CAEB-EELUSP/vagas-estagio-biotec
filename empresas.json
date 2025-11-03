@@ -2,7 +2,6 @@
   {
     "id": "biofab-sp",
     "nome": "BioFab Processos",
-    "Área da biotecnologia": "Bioprocessos",
     "lat": -23.5505,
     "lng": -46.6333,
     "cidade": "São Paulo",
@@ -10,7 +9,7 @@
     "resumo": "Desenvolvimento de processos fermentativos e downstream.",
     "email": "contato@biofab.com.br",
     "telefone": "(11) 99999-0000",
-    "site": "https://exemplo.com/biofab"
+    "site": "https://sites.google.com/view/caebeel"
   },
   {
     "id": "enzymix-campinas",
