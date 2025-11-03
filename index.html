@@ -8,15 +8,17 @@
     :root { --laranja:#eb6213; --texto:#fff; --card:#ffffff; --borda:#f2f2f2; }
     * { box-sizing: border-box; }
     body {
-      margin: 0; height: 100vh; display: grid; grid-template-columns: 240px 1fr; grid-template-rows: 100vh;
+      margin: 0; height: 100vh; display: grid; grid-template-columns: 240px 1fr;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif;
       background: var(--laranja);
     }
+    /* Sidebar */
     #sidebar {
-      background: var(--laranja); color: var(--texto); padding: 1rem; display: flex; flex-direction: column; gap: .75rem;
+      background: var(--laranja); color: var(--texto);
+      padding: 1rem; display: flex; flex-direction: column; gap: .75rem;
       border-right: 1px solid rgba(0,0,0,.06);
     }
-    #brand { font-weight: 800; letter-spacing: .4px; }
+    #brand { font-weight: 800; letter-spacing: .4px; line-height: 1.2; word-wrap: break-word; }
     .btn {
       background: rgba(255,255,255,.98); color: #111; border: none; border-radius: 12px;
       padding: .75rem 1rem; cursor: pointer; font-weight: 700; width: 100%; text-align: left;
@@ -27,93 +29,83 @@
     .muted { color: rgba(255,255,255,.9); font-size: .88rem; }
     .spacer { flex: 1; }
     a.clean { color: inherit; text-decoration: none; display: block; }
+    /* Main */
     #content {
-      display: grid; place-items: center; padding: 2rem; background: var(--laranja);
+      display: flex; justify-content: center; align-items: center; padding: 2rem; background: var(--laranja);
     }
     .card {
       width: min(980px, 92vw); background: var(--card); border: 1px solid var(--borda);
-      border-radius: 18px; padding: clamp(1rem, 2.5vw, 2rem); box-shadow: 0 16px 40px rgba(0,0,0,.16);
+      border-radius: 18px; padding: clamp(1rem, 2.5vw, 2rem);
+      box-shadow: 0 16px 40px rgba(0,0,0,.16); line-height: 1.6;
     }
-    h1 { margin: 0 0 .25rem; }
-    p.lead { margin: 0 0 1rem; color: #333; }
-    .toolbar { display: flex; gap: .6rem; margin-top: .8rem; }
+    h1, h2 { color: #111; margin-top: 0; }
+    p { color: #333; margin-bottom: 1rem; }
+    ul { margin: 0 0 1rem 1.5rem; }
     .pill {
-      background: #111; color: #fff; border-radius: 999px; padding: .5rem .9rem; font-size: .9rem; text-decoration: none;
+      background: #eb6213; color: #fff; border-radius: 999px; padding: .6rem 1rem;
+      text-decoration: none; font-weight: 700; display: inline-block;
     }
-    #sobreWrap { display:none; }
-    #sobre {
-      width: 100%; min-height: 200px; border: 1px solid #e6e6e6; border-radius: 12px; padding: .9rem 1rem;
-      outline: none; background: #fff; color: #222; line-height: 1.55;
-    }
-    #sobre:focus { box-shadow: 0 0 0 3px rgba(235,98,19,.25); }
-    .actions { display:flex; gap:.6rem; margin-top:.6rem; }
-    .btnSmall { background:#111; color:#fff; border:none; border-radius:10px; padding:.5rem .8rem; cursor:pointer; }
-    .note { font-size:.88rem; color:#444; margin-top:.4rem; }
     @media (max-width: 800px) {
       body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
-      #sidebar { grid-row: 1; grid-column: 1; display:flex; flex-direction: row; gap:.6rem; align-items:center; }
+      #sidebar { grid-row: 1; flex-direction: row; gap:.6rem; align-items:center; }
       #content { grid-row: 2; }
       .btn { width: auto; }
     }
   </style>
 </head>
 <body>
+  <!-- Sidebar -->
   <aside id="sidebar">
-    <div id="brand">Mapa Sudeste</div>
-    <button class="btn" id="btnSobre">🧾 Sobre o projeto</button>
-    <a class="clean" href="mapa.html"><button class="btn secondary" id="btnMapa">🗺️ Acesse o mapa</button></a>
+    <div id="brand">Mapeamento de Empresas com Atuação na Área de Engenharia Bioquímica no Estado de São Paulo</div>
+    <a class="clean" href="#sobre"><button class="btn">🧾 Sobre o projeto</button></a>
+    <a class="clean" href="mapa.html"><button class="btn secondary">🗺️ Acesse o mapa</button></a>
     <div class="spacer"></div>
     <div class="muted">© 2025</div>
   </aside>
 
+  <!-- Conteúdo principal (somente “Sobre o projeto”, fixo) -->
   <main id="content">
-    <section class="card" id="homeWrap">
-      <h1>Bem-vinda(o)!</h1>
-      <p class="lead">Use o menu ao lado para conhecer o projeto ou acessar o mapa interativo da região Sudeste.</p>
-      <div class="toolbar">
-        <a class="pill" href="#" id="ctaSobre">Ver Sobre</a>
-        <a class="pill" style="background:#eb6213" href="mapa.html">Acessar mapa</a>
-      </div>
-    </section>
-
-    <section class="card" id="sobreWrap">
+    <section class="card" id="sobre">
       <h1>Sobre o projeto</h1>
-      <p class="lead">Edite o texto abaixo conforme necessário. O conteúdo é salvo no seu navegador (localStorage).</p>
-      <div id="sobre" contenteditable="true" spellcheck="true">
-        Escreva aqui uma descrição do objetivo do projeto, público-alvo, como contribuir, contato, etc.
-      </div>
-      <div class="actions">
-        <button class="btnSmall" id="btnSalvar">Salvar</button>
-        <button class="btnSmall" id="btnRepor">Repor padrão</button>
-      </div>
-      <div class="note">Dica: o texto fica salvo apenas neste navegador. Para publicar no site, copie o conteúdo e cole no repositório (README ou página dedicada).</div>
+
+      <p>
+        O projeto <strong>Estágios em Biotec</strong> reúne e divulga oportunidades de estágio e empresas
+        com atuação na área de <strong>Engenharia Bioquímica</strong> e setores correlatos. A iniciativa
+        aproxima estudantes, universidades e o setor produtivo, conectando formação acadêmica e mercado.
+      </p>
+
+      <h2>Objetivos</h2>
+      <ul>
+        <li>Mapear empresas que atuam com biotecnologia e engenharia bioquímica no estado de São Paulo;</li>
+        <li>Disponibilizar informações básicas e contatos de forma acessível e interativa;</li>
+        <li>Auxiliar estudantes na busca por oportunidades de estágio e iniciação profissional;</li>
+        <li>Fortalecer a integração entre universidade e indústria.</li>
+      </ul>
+
+      <h2>Metodologia</h2>
+      <p>
+        As empresas são identificadas em fontes públicas, sites institucionais e bases setoriais.
+        As informações são apresentadas em um mapa interativo construído com <strong>Leaflet.js</strong>,
+        permitindo explorar cada empresa por localização e área de atuação.
+      </p>
+
+      <h2>Impacto esperado</h2>
+      <ul>
+        <li>Maior visibilidade das empresas do setor;</li>
+        <li>Facilidade de acesso a informações de contato e localização;</li>
+        <li>Ampliação da rede de estágios e oportunidades.</li>
+      </ul>
+
+      <h2>Próximos passos</h2>
+      <p>
+        Expansão para outros estados, inclusão de filtros temáticos (produto/área/porte) e
+        integração com formulários de divulgação de vagas.
+      </p>
+
+      <p><a href="mapa.html" class="pill">Acessar o mapa</a></p>
     </section>
   </main>
-
-  <script>
-    const homeWrap = document.getElementById('homeWrap');
-    const sobreWrap = document.getElementById('sobreWrap');
-    const btnSobre = document.getElementById('btnSobre');
-    const ctaSobre = document.getElementById('ctaSobre');
-    const sobre = document.getElementById('sobre');
-    const btnSalvar = document.getElementById('btnSalvar');
-    const btnRepor = document.getElementById('btnRepor');
-
-    function showSobre(){ homeWrap.style.display = 'none'; sobreWrap.style.display = 'block'; }
-    function showHome(){ sobreWrap.style.display = 'none'; homeWrap.style.display = 'block'; }
-    btnSobre.addEventListener('click', showSobre);
-    ctaSobre.addEventListener('click', (e)=>{ e.preventDefault(); showSobre(); });
-
-    const KEY = 'sobreProjetoTexto_v1';
-    const defaultText = 'Escreva aqui uma descrição do objetivo do projeto, público-alvo, como contribuir, contato, etc.';
-
-    function loadText(){ const saved = localStorage.getItem(KEY); if(saved){ sobre.innerHTML = saved; } }
-    function saveText(){ localStorage.setItem(KEY, sobre.innerHTML); alert('Texto salvo neste navegador.'); }
-    function resetText(){ if(confirm('Repor o texto padrão?')){ sobre.innerHTML = defaultText; localStorage.removeItem(KEY);} }
-    btnSalvar.addEventListener('click', saveText);
-    btnRepor.addEventListener('click', resetText);
-    loadText();
-  </script>
 </body>
 </html>
+
 
