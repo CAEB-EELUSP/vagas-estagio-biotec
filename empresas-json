@@ -1,0 +1,26 @@
+[
+  {
+    "id": "biofab-sp",
+    "nome": "BioFab Processos",
+    "lat": -23.5505,
+    "lng": -46.6333,
+    "cidade": "São Paulo",
+    "area": "Engenharia Bioquímica • Fermentação",
+    "resumo": "Desenvolvimento de processos fermentativos e downstream.",
+    "email": "contato@biofab.com.br",
+    "telefone": "(11) 99999-0000",
+    "site": "https://exemplo.com/biofab"
+  },
+  {
+    "id": "enzymix-campinas",
+    "nome": "EnzyMix",
+    "lat": -22.9099,
+    "lng": -47.0626,
+    "cidade": "Campinas",
+    "area": "Enzimas industriais • Lignocelulose",
+    "resumo": "Produção e aplicação de coquetéis enzimáticos para biomassa.",
+    "email": "rh@enzymix.com",
+    "telefone": "(19) 88888-7777",
+    "site": "https://exemplo.com/enzymix"
+  }
+]
