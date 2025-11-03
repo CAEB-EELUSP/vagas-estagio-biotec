@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estágios em Biotec — Detalhe</title>
+  <style>
+    :root { --laranja:#eb6213; }
+    * { box-sizing: border-box; }
+    body {
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif;
+      background:#f7f7f7; color:#111;
+    }
+    header {
+      background: var(--laranja); color:#fff; padding: 12px 16px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    header a {
+      background:#fff; color:#111; text-decoration:none; padding:8px 12px; border-radius:10px; font-weight:700;
+    }
+    main {
+      max-width: 960px; margin: 24px auto; padding: 0 16px;
+    }
+    .card {
+      background:#fff; border:1px solid #eee; border-radius:16px; padding:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    h1 { margin:0 0 6px; }
+    .muted { color:#555; margin-bottom:10px; }
+    .grid { display:grid; gap:10px; grid-template-columns: 1fr 1fr; }
+    .grid div { background:#fafafa; border:1px solid #eee; border-radius:10px; padding:12px; }
+    .actions { margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
+    .btn {
+      background:#eb6213; color:#fff; text-decoration:none; padding:10px 14px; border-radius:10px; font-weight:700;
+    }
+    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div>Estágios em Biotec — Detalhes da Empresa</div>
+    <a href="mapa.html">← Voltar ao mapa</a>
+  </header>
 
+  <main>
+    <div class="card" id="content">
+      Carregando dados…
+    </div>
+  </main>
+
+  <script>
+    // Lê ?id= da URL
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+
+    function tplEmpresa(emp) {
+      return `
+        <h1>${emp.nome}</h1>
+        <div class="muted">${emp.cidade ?? ''}</div>
+        <div class="grid">
+          <div><b>Área:</b><br>${emp.area ?? '-'}</div>
+          <div><b>Resumo:</b><br>${emp.resumo ?? '-'}</div>
+          <div><b>Email:</b><br>${emp.email ? `<a href="mailto:${emp.email}">${emp.email}</a>` : '-'}</div>
+          <div><b>Telefone:</b><br>${emp.telefone ?? '-'}</div>
+        </div>
+        <div class="actions">
+          ${emp.site ? `<a class="btn" href="${emp.site}" target="_blank" rel="noopener">Visitar site</a>` : ''}
+          <a class="btn" href="mapa.html">Voltar ao mapa</a>
+        </div>
+      `;
+    }
+
+    if (!id) {
+      document.getElementById('content').innerHTML = 'ID não informado.';
+    } else {
+      fetch('empresas.json')
+        .then(r => r.json())
+        .then(lista => {
+          const emp = lista.find(e => String(e.id) === String(id));
+          if (!emp) {
+            document.getElementById('content').innerHTML = 'Empresa não encontrada.';
+            return;
+          }
+          document.getElementById('content').innerHTML = tplEmpresa(emp);
+          document.title = `Estágios em Biotec — ${emp.nome}`;
+        })
+        .catch(() => {
+          document.getElementById('content').innerHTML = 'Erro ao carregar dados.';
+        });
+    }
+  </script>
+</body>
+</html>
