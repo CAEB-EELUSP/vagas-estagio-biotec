@@ -19,9 +19,37 @@ const orangeIcon = new L.Icon({
   iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
 });
 
-// Marcadores de exemplo
-L.marker([-23.55, -46.63], { icon: orangeIcon }).addTo(map).bindPopup('<b>São Paulo</b>');
-L.marker([-22.90, -43.20], { icon: orangeIcon }).addTo(map).bindPopup('<b>Rio de Janeiro</b>');
-L.marker([-19.92, -43.94], { icon: orangeIcon }).addTo(map).bindPopup('<b>Belo Horizonte</b>');
-L.marker([-20.32, -40.34], { icon: orangeIcon }).addTo(map).bindPopup('<b>Vitória</b>');
+// Util: gera botão com estilo inline (para não depender de CSS extra)
+function btnSaibaMais(id) {
+  const href = `detalhe.html?id=${encodeURIComponent(id)}`;
+  return `<a href="${href}" style="
+      display:inline-block;margin-top:8px;padding:8px 12px;border-radius:10px;
+      background:#eb6213;color:#fff;text-decoration:none;font-weight:700
+    ">Saiba mais</a>`;
+}
+
+// Carrega empresas e cria marcadores
+fetch('empresas.json')
+  .then(r => r.json())
+  .then(empresas => {
+    empresas.forEach(emp => {
+      if (typeof emp.lat !== 'number' || typeof emp.lng !== 'number') return;
+
+      const popupHtml = `
+        <div style="min-width:220px">
+          <strong>${emp.nome}</strong>
+          <div style="margin-top:4px;color:#555">${emp.cidade || ''}</div>
+          <div style="margin-top:4px;color:#333">${emp.area || ''}</div>
+          ${btnSaibaMais(emp.id)}
+        </div>
+      `;
+
+      L.marker([emp.lat, emp.lng], { icon: orangeIcon })
+        .addTo(map)
+        .bindPopup(popupHtml);
+    });
+  })
+  .catch(err => {
+    console.error('Erro ao carregar empresas.json', err);
+  });
 
