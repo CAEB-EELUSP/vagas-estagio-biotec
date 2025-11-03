@@ -39,7 +39,11 @@ fetch('empresas.json')
         <div style="min-width:220px">
           <strong>${emp.nome}</strong>
           <div style="margin-top:4px;color:#555">${emp.cidade || ''}</div>
+          <div style="margin-top:4px;color:#555">${emp.resumo || ''}</div>
           <div style="margin-top:4px;color:#333">${emp.area || ''}</div>
+          <div style="margin-top:4px;color:#555">${emp.email || ''}</div>
+          <div style="margin-top:4px;color:#555">${emp.telefone || ''}</div>
+          
           ${btnSaibaMais(emp.id)}
         </div>
       `;
@@ -52,4 +56,5 @@ fetch('empresas.json')
   .catch(err => {
     console.error('Erro ao carregar empresas.json', err);
   });
+
 
