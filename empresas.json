@@ -1,15 +1,15 @@
 [
   {
     "id": "biofab-sp",
-    "nome": "BioFab Processos",
-    "lat": -23.5505,
-    "lng": -46.6333,
-    "cidade": "São Paulo",
-    "area": "Engenharia Bioquímica • Fermentação",
-    "resumo": "Desenvolvimento de processos fermentativos e downstream.",
-    "email": "contato@biofab.com.br",
-    "telefone": "(11) 99999-0000",
-    "site": "https://sites.google.com/view/caebeel"
+    "nome": "Apoena Biotech",
+    "lat": -23.67019,
+    "lng": -46.62095,
+    "cidade": "Diadema/SP",
+    "area": "Insumos biotecnológicos",
+    "resumo": "Fabricante de ativos biotecnológicos para o setor cosmético e prestadora de serviços para produtos biotecnológicos.",
+    "email": "contato@apoena.com.br",
+    "telefone": "(11) 4091-7783",
+    "site": "https://www.apoenabiotech.com/"
   },
   {
     "id": "enzymix-campinas",
