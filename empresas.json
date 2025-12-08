@@ -1,10 +1,10 @@
 [
   {
-    "id": "biofab-sp",
+    "id": "apoena-biotech",
     "nome": "Apoena Biotech",
     "lat": -23.67019,
     "lng": -46.62095,
-    "cidade": "Diadema/SP",
+    "cidade": "Diadema-SP",
     "area": "Insumos biotecnológicos",
     "resumo": "Fabricante de ativos biotecnológicos para o setor cosmético e prestadora de serviços para produtos biotecnológicos.",
     "email": "contato@apoena.com.br",
@@ -12,15 +12,40 @@
     "site": "https://www.apoenabiotech.com/"
   },
   {
-    "id": "enzymix-campinas",
-    "nome": "EnzyMix",
-    "lat": -22.9099,
-    "lng": -47.0626,
-    "cidade": "Campinas",
-    "area": "Enzimas industriais • Lignocelulose",
-    "resumo": "Produção e aplicação de coquetéis enzimáticos para biomassa.",
-    "email": "rh@enzymix.com",
+    "id": "iff",
+    "nome": "IFF (International Flavors & Fragrances)",
+    "lat": -22.99394,
+    "lng": -45.51400,
+    "cidade": "Taubaté-SP",
+    "area": "Setor de higiene pessoal e/ou perfumaria / Setor alimentício",
+    "resumo": "Desenvolve, fabrica e comercializa aromas, fragrâncias e aditivos industriais. A planta de Taubaté é focada na produção de sabores (aromas líquidos, em pó, preparações de frutas), extrações e destilações. 
+Seus principais produtos envolvem sabores para alimentos, fragrâncias para cosméticos e limpeza, além de extratos naturais e “aroma chemicals”.",
+    "email": "",
     "telefone": "(19) 88888-7777",
-    "site": "https://exemplo.com/enzymix"
-  }
+    "site": "https://www.iff.com/"
+  },
+  {
+    "id": "biotecblue",
+    "nome": "Biotecblue",
+    "lat": -23.05355,
+    "lng": -45.57698,
+    "cidade": "Taubaté-SP",
+    "area": "Insumos biotecnológicos",
+    "resumo": "Atua no desenvolvimento de produtos sutentáveis destinados à nutrição animal aquática e insumos para química fina, através de microalgas, biotecnologia e reaproveitamento de resíduos",
+    "email": "",
+    "telefone": "",
+    "site": "https://biotecblue.com.br/"
+  },
+  {
+    "id": "adium",
+    "nome": "Adium",
+    "lat": -22.9185,
+    "lng": -45.4308,
+    "cidade": "Pindamonhangaba-SP",
+    "area": "Setor farmacêutico",
+    "resumo": "Fabricação de produtos farmoquímicos e farmacêuticos",
+    "email": "",
+    "telefone": "",
+    "site": ""
+  },
 ]
