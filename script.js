@@ -115,7 +115,7 @@ function applyFilters() {
 function popupHtml(emp) {
   // usa emp.site se existir, senão deixa sem botão
   const linkBtn = emp.site
-    ? `<a href="${emp.site}" target="_blank" rel="noopener"
+    ? `<a href="empresa.html?id=${emp.id}" target="_blank" rel="noopener"
          style="display:inline-block;margin-top:8px;padding:8px 12px;
                 border-radius:10px;background:#eb6213;color:#fff;
                 text-decoration:none;font-weight:700">
@@ -166,6 +166,7 @@ fetch('empresas.json')
   .catch(err => {
     console.error('Erro ao carregar empresas.json', err);
   });
+
 
 
 
