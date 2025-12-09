@@ -127,8 +127,10 @@ function popupHtml(emp) {
     <div style="min-width:220px">
       <strong>${emp.nome}</strong>
       <div style="margin-top:4px;color:#555">${emp.cidade ?? ""}</div>
-      <div style="margin-top:4px;color:#333">
-        ${emp.area ?? (Array.isArray(emp.areas) ? emp.areas.join(", ") : "")}
+      <div style="margin-top:4px;color:#333"><i>
+        ${emp.area ?? (Array.isArray(emp.areas) ? emp.areas.join(", ") : "")}</i></div>
+      <div style="margin-top:12px;color:#C14904"><strong>${emp.telefone ?? ""}</strong>
+      <div style="margin-top:4px;color:#C14904"><strong>${emp.email ?? ""}</strong>
       </div>
       ${linkBtn}
     </div>
@@ -159,3 +161,4 @@ fetch('empresas.json')
   .catch(err => {
     console.error('Erro ao carregar empresas.json', err);
   });
+
