@@ -39,7 +39,7 @@
     "telefone": "",
     "site": "amyris.com",
     "porte": "Multinacional",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "hypera-pharma",
@@ -53,7 +53,7 @@
     "telefone": "",
     "site": "https://www.hypera.com.br/",
     "porte": "Nacional",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "beiersdorf",
@@ -67,7 +67,7 @@
     "telefone": "",
     "site": "http://beiersdorf.com.br/",
     "porte": "Multinacional",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "suzano-jacarei",
@@ -81,7 +81,7 @@
     "telefone": "(11) 3636 5010",
     "site": "https://www.suzano.com.br/",
     "porte": "Multinacional",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "soufflet-malt",
@@ -95,7 +95,7 @@
     "telefone": "",
     "site": "",
     "porte": "Multinacional",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "borealis",
@@ -109,7 +109,7 @@
     "telefone": "(11) 4524.9177 e (11) 99267.5171",
     "site": "https://www.borealisgroup.com/brasil",
     "porte": "Nacional",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "bionovis",
@@ -123,7 +123,7 @@
     "telefone": "",
     "site": "https://bionovis.com.br/",
     "porte": "Nacional",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "comevap",
@@ -137,7 +137,7 @@
     "telefone": "",
     "site": "https://comevap.com.br/",
     "porte": "Nacional",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "rovensa-next",
@@ -151,7 +151,7 @@
     "telefone": "(43) 9158-2176",
     "site": "https://www.rovensanext.com.br/",
     "porte": "Multinacional",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "biolinker-tech",
@@ -165,7 +165,7 @@
     "telefone": "(11) 4703-8588",
     "site": "https://biolinker.tech/",
     "porte": "Startup",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "iqt",
@@ -179,7 +179,7 @@
     "telefone": "(12) 2125-9606",
     "site": "http://iqt.com.br/",
     "porte": "Nacional",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "biotecblue",
@@ -193,7 +193,7 @@
     "telefone": "",
     "site": "https://biotecblue.com.br/",
     "porte": "Startup",
-    "estagio":
+    "estagio": ""
   },
   {
     "id": "adium",
@@ -207,6 +207,6 @@
     "telefone": "",
     "site": "",
     "porte": "Multinacional",
-    "estagio":
+    "estagio": ""
   }
 ]
