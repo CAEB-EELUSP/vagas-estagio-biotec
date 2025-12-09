@@ -39,8 +39,8 @@
 </head>
 <body>
   <header>
-    <div>Estágios em Biotec — Detalhes da Empresa</div>
-    <a href="mapa.html">← Voltar ao mapa</a>
+    <div>Biolink</div>
+    <a class="btn" href="index.html"><button class="btn">◀️ Voltar</button></a>
   </header>
 
   <main>
@@ -83,7 +83,7 @@
             return;
           }
           document.getElementById('content').innerHTML = tplEmpresa(emp);
-          document.title = `Estágios em Biotec — ${emp.nome}`;
+          document.title = `Bio Link — ${emp.nome}`;
         })
         .catch(() => {
           document.getElementById('content').innerHTML = 'Erro ao carregar dados.';
