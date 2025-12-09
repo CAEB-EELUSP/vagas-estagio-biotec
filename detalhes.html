@@ -17,7 +17,12 @@
       display:flex; align-items:center; justify-content:space-between;
     }
     header a {
-      background:#fff; color:#111; text-decoration:none; padding:8px 12px; border-radius:10px; font-weight:700;
+      background:#fff; 
+      color:#111; 
+      text-decoration:none; 
+      padding:8px 12px; 
+      border-radius:10px; 
+      font-weight:700;
     }
     main {
       max-width: 960px; margin: 24px auto; padding: 0 16px;
@@ -38,9 +43,10 @@
   </style>
 </head>
 <body>
+
   <header>
     <div>Biolink</div>
-    <a class="btn" href="index.html"><button class="btn">◀️ Voltar</button></a>
+    <a class="btn" href="index.html">◀️ Voltar</a>
   </header>
 
   <main>
@@ -50,20 +56,23 @@
   </main>
 
   <script>
-    // Lê ?id= da URL
+    // lê id da empresa conforme o url do botão
     const params = new URLSearchParams(location.search);
     const id = params.get('id');
 
+    // template dados da empresa
     function tplEmpresa(emp) {
       return `
         <h1>${emp.nome}</h1>
         <div class="muted">${emp.cidade ?? ''}</div>
+
         <div class="grid">
-          <div><b>Área:</b><br>${emp.area ?? '-'}</div>
+          <div><b>Área:</b><br>${emp.area ?? emp.areas?.join(", ") ?? '-'}</div>
           <div><b>Resumo:</b><br>${emp.resumo ?? '-'}</div>
           <div><b>Email:</b><br>${emp.email ? `<a href="mailto:${emp.email}">${emp.email}</a>` : '-'}</div>
           <div><b>Telefone:</b><br>${emp.telefone ?? '-'}</div>
         </div>
+
         <div class="actions">
           ${emp.site ? `<a class="btn" href="${emp.site}" target="_blank" rel="noopener">Visitar site</a>` : ''}
           <a class="btn" href="mapa.html">Voltar ao mapa</a>
@@ -71,6 +80,7 @@
       `;
     }
 
+    // validação do id da empresa
     if (!id) {
       document.getElementById('content').innerHTML = 'ID não informado.';
     } else {
@@ -78,10 +88,12 @@
         .then(r => r.json())
         .then(lista => {
           const emp = lista.find(e => String(e.id) === String(id));
+
           if (!emp) {
             document.getElementById('content').innerHTML = 'Empresa não encontrada.';
             return;
           }
+
           document.getElementById('content').innerHTML = tplEmpresa(emp);
           document.title = `Bio Link — ${emp.nome}`;
         })
@@ -90,5 +102,6 @@
         });
     }
   </script>
+
 </body>
 </html>
