@@ -130,7 +130,7 @@ function popupHtml(emp) {
       <div style="
           margin-top:4px;
           color:#777; 
-          font-size: 0.85rem; 
+          font-size: 0.70rem; 
           font-family: 'Segoe UI', sans-serif;
     ">
         #${emp.area ?? (Array.isArray(emp.areas) ? emp.areas.join(", ") : "")}</div>
@@ -166,6 +166,7 @@ fetch('empresas.json')
   .catch(err => {
     console.error('Erro ao carregar empresas.json', err);
   });
+
 
 
 
