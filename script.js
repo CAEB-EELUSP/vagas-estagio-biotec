@@ -113,30 +113,35 @@ function applyFilters() {
 
 // ====== Pop-up com "Saiba mais" ======
 function popupHtml(emp) {
-  // usa emp.site se existir, senão deixa sem botão
-  const linkBtn = emp.site
-    ? `<a href="empresa.html?id=${emp.id}" target="_blank" rel="noopener"
-         style="display:inline-block;margin-top:8px;padding:8px 12px;
-                border-radius:10px;background:#eb6213;color:#fff;
-                text-decoration:none;font-weight:700">
-         Saiba mais
-       </a>`
-    : "";
+
+  const linkBtn = `
+    <a href="empresa.html?id=${emp.id}"
+       style="display:inline-block;margin-top:8px;padding:8px 12px;
+              border-radius:10px;background:#eb6213;color:#fff;
+              text-decoration:none;font-weight:700">
+       Saiba mais
+    </a>`;
 
   return `
     <div style="min-width:220px">
       <strong>${emp.nome}</strong>
       <div style="margin-top:4px;color:#555">${emp.cidade ?? ""}</div>
+
       <div style="
-          margin-top:4px;
-          color:#777; 
-          font-size: 0.70rem; 
-          font-family: 'Segoe UI', sans-serif;
-    ">
-        # ${emp.area ?? (Array.isArray(emp.areas) ? emp.areas.join(", ") : "")}</div>
-      <div style="margin-top:12px;color:#C14904"><strong>${emp.telefone ?? ""}</strong>
-      <div style="margin-top:4px;color:#C14904"><strong>${emp.email ?? ""}</strong>
+        margin-top:4px;
+        color:#777;
+        font-size: 0.70rem;
+        font-family: 'Segoe UI', sans-serif;">
+        # ${emp.area ?? (Array.isArray(emp.areas) ? emp.areas.join(", ") : "")}
       </div>
+
+      <div style="margin-top:12px;color:#C14904">
+        <strong>${emp.telefone ?? ""}</strong>
+      </div>
+      <div style="margin-top:4px;color:#C14904">
+        <strong>${emp.email ?? ""}</strong>
+      </div>
+
       ${linkBtn}
     </div>
   `;
@@ -166,6 +171,7 @@ fetch('empresas.json')
   .catch(err => {
     console.error('Erro ao carregar empresas.json', err);
   });
+
 
 
 
