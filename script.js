@@ -115,7 +115,7 @@ function applyFilters() {
 function popupHtml(emp) {
 
   const linkBtn = `
-    <a href="empresa.html?id=${emp.id}"
+    <a href="detalhes.html?id=${emp.id}"
        style="display:inline-block;margin-top:8px;padding:8px 12px;
               border-radius:10px;background:#eb6213;color:#fff;
               text-decoration:none;font-weight:700">
@@ -171,6 +171,7 @@ fetch('empresas.json')
   .catch(err => {
     console.error('Erro ao carregar empresas.json', err);
   });
+
 
 
 
