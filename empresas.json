@@ -9,7 +9,9 @@
     "resumo": "Fabricante de ativos biotecnológicos para o setor cosmético e prestadora de serviços para produtos biotecnológicos.",
     "email": "contato@apoena.com.br",
     "telefone": "(11) 4091-7783",
-    "site": "https://www.apoenabiotech.com/"
+    "site": "https://www.apoenabiotech.com/",
+    "porte": "Startup",
+    "estagio":
   },
   {
     "id": "iff",
@@ -21,7 +23,9 @@
     "resumo": "Desenvolve, fabrica e comercializa aromas, fragrâncias e aditivos industriais. A planta de Taubaté é focada na produção de sabores (aromas líquidos, em pó, preparações de frutas), extrações e destilações. Seus principais produtos envolvem sabores para alimentos, fragrâncias para cosméticos e limpeza, além de extratos naturais e “aroma chemicals”.",
     "email": "",
     "telefone": "",
-    "site": "https://www.iff.com/"
+    "site": "https://www.iff.com/",
+    "porte": "Multinacional",
+    "estagio":
   },
   {
     "id": "amyris",
@@ -33,7 +37,9 @@
     "resumo": "Empresa de base tecnológica cujo objetivo é desenvolver e produzir ingredientes sustentáveis para a indústria de Saúde e Bem Estar e Frangâncias e Aromas. A empresa usa tecnologias de engenharia metabólica, inteligência artificial e robotização.",
     "email": "",
     "telefone": "",
-    "site": "amyris.com"
+    "site": "amyris.com",
+    "porte": "Multinacional",
+    "estagio":
   },
   {
     "id": "hypera-pharma",
@@ -45,7 +51,9 @@
     "resumo": "Atua em vários segmentos farmacêuticos, incluindo: prescription (prescrição) com sua marca Mantecorp Farmasa, dermocosméticos (via Mantecorp Skincare), medicamentos de venda livre (“Consumer Health”), genéricos/similares e o mercado institucional (hospitais e clínicas). Tem um portfólio de marcas bem conhecidas no Brasil, como Benegrip, Buscopan, Neosaldina, Engov, entre outras.",
     "email": "",
     "telefone": "",
-    "site": "https://www.hypera.com.br/"
+    "site": "https://www.hypera.com.br/",
+    "porte": "Nacional",
+    "estagio":
   },
   {
     "id": "beiersdorf",
@@ -57,7 +65,9 @@
     "resumo": "Produtos para pele como Nivea e Eucerin.",
     "email": "",
     "telefone": "",
-    "site": "http://beiersdorf.com.br/"
+    "site": "http://beiersdorf.com.br/",
+    "porte": "Multinacional",
+    "estagio":
   },
   {
     "id": "suzano-jacarei",
@@ -69,7 +79,9 @@
     "resumo": "Fabricação de celulose, papel e produtos de papel",
     "email": "rhresponde@suzano.com.br",
     "telefone": "(11) 3636 5010",
-    "site": "https://www.suzano.com.br/"
+    "site": "https://www.suzano.com.br/",
+    "porte": "Multinacional",
+    "estagio":
   },
   {
     "id": "soufflet-malt",
@@ -81,7 +93,9 @@
     "resumo": "Produção de malte. Fornece malte para grandes cervejarias.",
     "email": "",
     "telefone": "",
-    "site": ""
+    "site": "",
+    "porte": "Multinacional",
+    "estagio":
   },
   {
     "id": "borealis",
@@ -93,7 +107,9 @@
     "resumo": "Produção de resinas termoplásticas e compósitos de poliolefinas (polipropileno e polietileno), soluções para setores automotivo, eletrodomésticos, embalagens e outros.",
     "email": "luizeduardo.zilio@borealisgroup.com",
     "telefone": "(11) 4524.9177 e (11) 99267.5171",
-    "site": "https://www.borealisgroup.com/brasil"
+    "site": "https://www.borealisgroup.com/brasil",
+    "porte": "Nacional",
+    "estagio":
   },
   {
     "id": "bionovis",
@@ -105,7 +121,9 @@
     "resumo": "Pesquisar e desenvolver medicamentos biológicos e biossimilares de alta complexidade",
     "email": "sac@bionovis.com.br",
     "telefone": "",
-    "site": "https://bionovis.com.br/"
+    "site": "https://bionovis.com.br/",
+    "porte": "Nacional",
+    "estagio":
   },
   {
     "id": "comevap",
@@ -117,7 +135,9 @@
     "resumo": "Fabricação de laticínios.",
     "email": "",
     "telefone": "",
-    "site": "https://comevap.com.br/"
+    "site": "https://comevap.com.br/",
+    "porte": "Nacional",
+    "estagio":
   },
   {
     "id": "rovensa-next",
@@ -129,7 +149,9 @@
     "resumo": "Desenvolve, fabrica e comercializa produtos voltados à nutrição vegetal, biocontrole de pragas e doenças, adjuvantes e corretores de solo. Oferece assistência técnica e suporte ao agricultor, com foco em aumentar a produtividade e reduzir impactos ambientais. Tem, dentre seus principais produtos, 'AGER Cálcio', 'AGER Magnésio', 'AGER Zinco', voltados à nutrição vegetal.",
     "email": "info@rovensanext.com",
     "telefone": "(43) 9158-2176",
-    "site": "https://www.rovensanext.com.br/"
+    "site": "https://www.rovensanext.com.br/",
+    "porte": "Multinacional",
+    "estagio":
   },
   {
     "id": "biolinker-tech",
@@ -141,7 +163,9 @@
     "resumo": "Focada na biotecnologia e biologia sintética para resolução de desafios complexos em pesquisa, diagnóstico e produção industrial, Atuamos na descoberta, desenvolvimento e manufatura de proteínas recombinantes",
     "email": "",
     "telefone": "(11) 4703-8588",
-    "site": "https://biolinker.tech/"
+    "site": "https://biolinker.tech/",
+    "porte": "Startup",
+    "estagio":
   },
   {
     "id": "iqt",
@@ -153,7 +177,9 @@
     "resumo": "Produção de IFA (Insumo Farmacêutico Ativo) para o setor farmacêutico, produtos de perfumaria e higiene pessoal para o setor de cosméticos, excipientes para o setor veterinário e distribuímos produtos da linha de lubrificantes automotivos.",
     "email": "contato@iqt.com.br",
     "telefone": "(12) 2125-9606",
-    "site": "http://iqt.com.br/"
+    "site": "http://iqt.com.br/",
+    "porte": "Nacional",
+    "estagio":
   },
   {
     "id": "biotecblue",
@@ -165,7 +191,9 @@
     "resumo": "Atua no desenvolvimento de produtos sutentáveis destinados à nutrição animal aquática e insumos para química fina, através de microalgas, biotecnologia e reaproveitamento de resíduos",
     "email": "",
     "telefone": "",
-    "site": "https://biotecblue.com.br/"
+    "site": "https://biotecblue.com.br/",
+    "porte": "Startup",
+    "estagio":
   },
   {
     "id": "adium",
@@ -177,6 +205,8 @@
     "resumo": "Fabricação de produtos farmoquímicos e farmacêuticos",
     "email": "",
     "telefone": "",
-    "site": ""
+    "site": "",
+    "porte": "Multinacional",
+    "estagio":
   }
 ]
