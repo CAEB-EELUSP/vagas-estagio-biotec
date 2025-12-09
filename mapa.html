@@ -62,17 +62,19 @@
     <button id="btnLimpar" class="btn" style="margin-top:.4rem;">Limpar filtros</button>
   </aside>
 
-  <div id="main">
-    <div id="topbar">
-      <div>Estágios em Biotec — Mapa (Sudeste)</div>
-          <img src="header.png"
+<div id="main">
+  <div id="topbar" style="display:flex; justify-content:space-between; align-items:center;">
+
+    <div style="display:flex; flex-direction:column;">
+      <div>Biolink — Mapa | Sudeste</div>
+
+      <img src="header.png"
            alt="header"
            style="margin-top:4px; height:40px; object-fit:contain;">
-        </div>
-      <a class="btn" href="index.html">Capa</a>
     </div>
-    <div id="map"></div>
-  </div>
+  
+  <div id="map"></div>
+</div>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="script.js?v=3"></script>
